@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03动态改变文字大小</title>
+	<style>
+		#oP  {
+			font-size: 15px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var jia = document.getElementById('Jia');
+			var jian = document.getElementById('Jian');
+			var oP = document.getElementById('oP');
+			var num = 15;			
+
+			jia.onclick = function(){
+				num ++;
+				//注意：JS中不允许出现中划线'-'例如：font-size.要写成fontSize格式。
+				//alert(num);查看弹出的内容
+				oP.style.fontSize = num + 'px';
+				//弹出的num只是数字，并没有像素单位，所以要添加单位，否则不会改变字体大小
+			}
+			jian.onclick = function(){
+				num --;
+				oP.style.fontSize = num + 'px';
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="+" id="Jia">
+	<input type="button" value="-" id="Jian">
+	<p id="oP">我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，我是一段文字，</p>
+</body>
+</html>
